@@ -1,0 +1,7 @@
+.results{
+    padding: 10px 20px;
+}
+
+.results:hover{
+    background-color: gray;
+}
