@@ -1,6 +1,8 @@
-*{
+* {
+  /* box-sizing: border-box; */
   margin: 0;
   padding: 0;
+  font-family: Helvetica, sans-serif;
 }
 
 body {
@@ -14,18 +16,19 @@ body {
 
 
 .container{
-  max-width: 600px;;
+  max-width: 400px;;
   margin: auto;
   padding: 0 1rem;
 }
 
 h1{
-  margin-top: 1rem;
+  margin-top: 5rem;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .top{
-  margin-top: 1rem;
+  margin-top: 5rem;
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -72,4 +75,16 @@ input{
 .icon{
   cursor: pointer;
   font-size: 20px;
+}
+
+.search-container {
+  /* padding-top: 20vh; */
+  /* width: 40%; */
+  /* margin: auto; */ 
+  height: 40px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* min-width: 200px; */
 }
