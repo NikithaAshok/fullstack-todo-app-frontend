@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react"; // Correct import statement
 import ToDo from "./components/ToDo";
 import { addToDo, getAllToDo, updateToDo, deleteToDo} from "./utils/HandleApi";
+import Search from "./components/Search";
+import { SearchResults } from "./components/SearchResults";
+
 
 function App() {
 
@@ -9,6 +12,8 @@ function App() {
   const [isUpdate, setIsUpdate] = useState(false)
   const [toDoId, setToDoId] = useState("")
 
+  const [results,setResults] = useState([]);
+ 
 
   useEffect(() => {
     getAllToDo(setToDo)
@@ -24,12 +29,20 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>ToDo App</h1>
+        
+        {/* </ul> */}
+        <h1> Search Bar</h1>
+        <div className="search-container">
+        <Search setResults={setResults}/>
+        {results && results.length > 0 && <SearchResults results={results} />}
+        </div>
+        
         <div className="top">
           <input 
           type="text" 
           placeholder="Add To Do"
           value={text}
-          onChange={(e) => setText(e.target.value)} ></input>
+          onChange={(e) => setText(e.target.value)}/>
 
           <div 
           className="add" 
@@ -39,6 +52,8 @@ function App() {
             {isUpdate ? "Update" : "Add"}
           </div>
           </div>
+
+          <div className="line"></div>
 
           <div className="list">
 
