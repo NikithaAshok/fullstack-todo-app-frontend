@@ -5,11 +5,9 @@ import "../searchresults.css"
 export const SearchResults = ({results}) => {
   return (
     <div className='search-results'>
-        {
-            results.map((user) => {
-                return <Results key={user.id} user={user.name}/>
-            })
-        }
+        {results.map((item) => {
+        return <Results key={item._id} name={item.text} />;
+      })}
     </div>
   )
 }
